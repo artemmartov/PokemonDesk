@@ -1,0 +1,10 @@
+.header {
+  background: #f5db13;
+  min-height: 100px;
+  &-items {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+  }
+}
