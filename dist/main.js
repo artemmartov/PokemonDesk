@@ -261,7 +261,7 @@
 
     /***/ './node_modules/css-modules-typescript-loader/index.js?module!./node_modules/css-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js!./src/components/Header/Header.scss':
       /*!**************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-modules-typescript-loader?module!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js!./src/components/Header/Header.scss ***!
+  !*** ./node_modules/css-modules-typescript-loader?module!./node_modules/css-loader/dist/cjs.js??ref--7-2!./node_modules/sass-loader/dist/cjs.js!./src/components/Header/Header.scss ***!
   \**************************************************************************************************************************************************************************************/
       /*! exports provided: default */
       /***/ function (module, __webpack_exports__, __webpack_require__) {
@@ -308,7 +308,7 @@
 
     /***/ './node_modules/css-modules-typescript-loader/index.js?module!./node_modules/css-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js!./src/index.scss':
       /*!*******************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-modules-typescript-loader?module!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  !*** ./node_modules/css-modules-typescript-loader?module!./node_modules/css-loader/dist/cjs.js??ref--7-2!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*******************************************************************************************************************************************************************/
       /*! exports provided: default */
       /***/ function (module, __webpack_exports__, __webpack_require__) {
@@ -334,9 +334,16 @@
         // Module
         ___CSS_LOADER_EXPORT___.push([
           module.i,
+          '* {\n  margin: 0;\n  padding: 0;\n  border: 0 none;\n  vertical-align: baseline;\n}',
           '',
-          '',
-          { version: 3, sources: [], names: [], mappings: '', sourceRoot: '' },
+          {
+            version: 3,
+            sources: ['webpack://src/index.scss'],
+            names: [],
+            mappings: 'AAAA;EACE,SAAA;EACA,UAAA;EACA,cAAA;EACA,wBAAA;AACF',
+            sourcesContent: ['* {\n  margin: 0;\n  padding: 0;\n  border: 0 none;\n  vertical-align: baseline;\n}'],
+            sourceRoot: '',
+          },
         ]);
         // Exports
         /* harmony default export */ __webpack_exports__['default'] = ___CSS_LOADER_EXPORT___;
@@ -33220,8 +33227,8 @@ object-assign
         /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/ __webpack_require__.n(
           _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__,
         );
-        /* harmony import */ var _node_modules_css_modules_typescript_loader_index_js_module_node_modules_css_loader_dist_cjs_js_ref_6_2_node_modules_sass_loader_dist_cjs_js_Header_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-          /*! !../../../node_modules/css-modules-typescript-loader?module!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js!./Header.scss */ './node_modules/css-modules-typescript-loader/index.js?module!./node_modules/css-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js!./src/components/Header/Header.scss',
+        /* harmony import */ var _node_modules_css_modules_typescript_loader_index_js_module_node_modules_css_loader_dist_cjs_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_Header_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+          /*! !../../../node_modules/css-modules-typescript-loader?module!../../../node_modules/css-loader/dist/cjs.js??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js!./Header.scss */ './node_modules/css-modules-typescript-loader/index.js?module!./node_modules/css-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js!./src/components/Header/Header.scss',
         );
 
         var options = {};
@@ -33230,14 +33237,14 @@ object-assign
         options.singleton = false;
 
         var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(
-          _node_modules_css_modules_typescript_loader_index_js_module_node_modules_css_loader_dist_cjs_js_ref_6_2_node_modules_sass_loader_dist_cjs_js_Header_scss__WEBPACK_IMPORTED_MODULE_1__[
+          _node_modules_css_modules_typescript_loader_index_js_module_node_modules_css_loader_dist_cjs_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_Header_scss__WEBPACK_IMPORTED_MODULE_1__[
             'default'
           ],
           options,
         );
 
         /* harmony default export */ __webpack_exports__['default'] =
-          _node_modules_css_modules_typescript_loader_index_js_module_node_modules_css_loader_dist_cjs_js_ref_6_2_node_modules_sass_loader_dist_cjs_js_Header_scss__WEBPACK_IMPORTED_MODULE_1__[
+          _node_modules_css_modules_typescript_loader_index_js_module_node_modules_css_loader_dist_cjs_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_Header_scss__WEBPACK_IMPORTED_MODULE_1__[
             'default'
           ].locals || {};
 
@@ -33259,19 +33266,17 @@ object-assign
           };
         Object.defineProperty(exports, '__esModule', { value: true });
         var react_1 = __importDefault(__webpack_require__(/*! react */ './node_modules/react/index.js'));
+        // import Logo from './images/Logo.svg';
         __webpack_require__(/*! ./Header.scss */ './src/components/Header/Header.scss');
         var Header = function () {
           return react_1.default.createElement(
             'header',
             { className: 'header' },
+            react_1.default.createElement('div', null),
             react_1.default.createElement(
               'ul',
               { className: 'header-items' },
-              react_1.default.createElement(
-                'li',
-                null,
-                react_1.default.createElement('img', { src: '#', alt: 'pokemon' }),
-              ),
+              react_1.default.createElement('li', null),
               react_1.default.createElement('li', null, 'Home'),
               react_1.default.createElement('li', null, 'Pokedex'),
               react_1.default.createElement('li', null, 'Legendaries'),
@@ -33298,8 +33303,8 @@ object-assign
         /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/ __webpack_require__.n(
           _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__,
         );
-        /* harmony import */ var _node_modules_css_modules_typescript_loader_index_js_module_node_modules_css_loader_dist_cjs_js_ref_6_2_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-          /*! !../node_modules/css-modules-typescript-loader?module!../node_modules/css-loader/dist/cjs.js??ref--6-2!../node_modules/sass-loader/dist/cjs.js!./index.scss */ './node_modules/css-modules-typescript-loader/index.js?module!./node_modules/css-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js!./src/index.scss',
+        /* harmony import */ var _node_modules_css_modules_typescript_loader_index_js_module_node_modules_css_loader_dist_cjs_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+          /*! !../node_modules/css-modules-typescript-loader?module!../node_modules/css-loader/dist/cjs.js??ref--7-2!../node_modules/sass-loader/dist/cjs.js!./index.scss */ './node_modules/css-modules-typescript-loader/index.js?module!./node_modules/css-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js!./src/index.scss',
         );
 
         var options = {};
@@ -33308,14 +33313,14 @@ object-assign
         options.singleton = false;
 
         var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(
-          _node_modules_css_modules_typescript_loader_index_js_module_node_modules_css_loader_dist_cjs_js_ref_6_2_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_1__[
+          _node_modules_css_modules_typescript_loader_index_js_module_node_modules_css_loader_dist_cjs_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_1__[
             'default'
           ],
           options,
         );
 
         /* harmony default export */ __webpack_exports__['default'] =
-          _node_modules_css_modules_typescript_loader_index_js_module_node_modules_css_loader_dist_cjs_js_ref_6_2_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_1__[
+          _node_modules_css_modules_typescript_loader_index_js_module_node_modules_css_loader_dist_cjs_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_1__[
             'default'
           ].locals || {};
 
@@ -33339,6 +33344,7 @@ object-assign
         var react_1 = __importDefault(__webpack_require__(/*! react */ './node_modules/react/index.js'));
         var react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ './node_modules/react-dom/index.js'));
         var App_1 = __importDefault(__webpack_require__(/*! ./App */ './src/App.tsx'));
+        __webpack_require__(/*! ./index.scss */ './src/index.scss');
         react_dom_1.default.render(react_1.default.createElement(App_1.default), document.getElementById('root'));
 
         /***/

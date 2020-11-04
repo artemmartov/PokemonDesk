@@ -1,6 +1,7 @@
 const path = require('path');
 const HTMLWebpackPlugins = require('html-webpack-plugin');
 const NODE_ENV = process.env.NODE_ENV;
+
 module.exports = {
   resolve: { extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'] },
   mode: NODE_ENV ? NODE_ENV : 'development',
@@ -11,6 +12,17 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'svg-url-loader',
+            options: {
+              limit: 10000,
+            },
+          },
+        ],
+      },
       {
         test: /\.[tj]sx?$/,
         exclude: /node_modules/,

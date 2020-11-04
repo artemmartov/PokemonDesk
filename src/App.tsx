@@ -1,14 +1,22 @@
 import React from 'react';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Default as Layout } from './layouts';
+
 import './index.scss';
 
 const App = () => (
-  <>
-    <Header />
-    <div>content</div>
-    <Footer />
-  </>
+  <section className="App">
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Layout>
+            <div>content</div>
+            <footer>footer</footer>
+          </Layout>
+        </Route>
+      </Switch>
+    </Router>
+  </section>
 );
 
 export default App;

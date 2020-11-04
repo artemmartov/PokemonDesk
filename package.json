@@ -10,9 +10,12 @@
   "author": "Artem Geroyan <geroyan.artem@mail.ru>",
   "license": "MIT",
   "dependencies": {
+    "@types/react-router-dom": "^5.1.6",
     "classnames": "^2.2.6",
+    "normalize.css": "^8.0.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.11",
@@ -41,6 +44,7 @@
     "pretty-quick": "^3.1.0",
     "sass-loader": "^10.0.4",
     "style-loader": "^2.0.0",
+    "svg-url-loader": "^6.0.0",
     "ts-loader": "^8.0.7",
     "typescript": "^4.0.3",
     "typescript-plugin-css-modules": "^2.8.0",
