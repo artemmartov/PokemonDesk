@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Default as Layout } from './layouts';
+// import NotFound from './Pages/NotFound';
+import HomePage from './Pages/Home';
 
 import './index.scss';
 
@@ -9,10 +10,11 @@ const App = () => (
     <Router>
       <Switch>
         <Route exact path="/">
-          <Layout>
-            <div>content</div>
-            <footer>footer</footer>
-          </Layout>
+          <HomePage />
+        </Route>
+
+        <Route path="/pokedex">
+          <footer>pokedex</footer>
         </Route>
       </Switch>
     </Router>

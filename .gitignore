@@ -1,4 +1,11 @@
 node_modules/
 .idea/
-
 src/**.d.ts
+
+
+dist/
+
+**/*.module.d.ts
+**/*.module.scss.d.ts
+*.module.css
+*.css

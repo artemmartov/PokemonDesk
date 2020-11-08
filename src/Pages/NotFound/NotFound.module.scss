@@ -1,0 +1,33 @@
+@import '../../variables';
+
+.root {
+  min-height: 100vh;
+  background: $Danger;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.error {
+  position: absolute;
+}
+
+.r {
+  position: absolute;
+  z-index: 2;
+}
+
+.images {
+  width: 880px;
+  height: 123px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 48px;
+}

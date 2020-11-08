@@ -1,0 +1,32 @@
+@import '../../variables';
+
+.root {
+  height: 100vh;
+  background: linear-gradient(180deg, $Third 0%, $Primary 100%);
+  overflow-y: hidden;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 75px;
+  margin: 0 auto;
+}
+
+.textBlock {
+  max-width: 520px;
+}
+
+.title {
+  font-size: 72px;
+}
+
+.titleSpan {
+  font-weight: normal;
+}
+
+.subtitle {
+  font-size: 32px;
+  line-height: 37px;
+}

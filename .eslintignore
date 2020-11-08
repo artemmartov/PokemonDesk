@@ -1,0 +1,4 @@
+webpack.config.js
+*.css
+**/*.module.d.ts
+**/*.module.scss.d.ts
