@@ -1,20 +1,16 @@
 import React from 'react';
 import s from './Button.module.scss';
 
-export enum Color {
-  yellow = '#f2cb07',
-  green = '#73d677',
-}
-
 interface ButtonProps {
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  color?: string;
-  size?: number;
+  green?: boolean;
+  large?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
+const Button: React.FC<ButtonProps> = ({ children, onClick, green, large }) => {
+  const classes: Array<string> = [s.root, green ? s.green : '', large ? s.large : ''];
   return (
-    <button type="button" className={s.root} onClick={onClick}>
+    <button type="button" className={classes.join(' ')} onClick={onClick}>
       {children}
     </button>
   );

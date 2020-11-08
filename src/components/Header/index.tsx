@@ -23,7 +23,7 @@ const MENU: IMenu[] = [
   {
     id: 3,
     value: 'Legendaries',
-    link: '/legendariess',
+    link: '/legendaries',
   },
   {
     id: 4,

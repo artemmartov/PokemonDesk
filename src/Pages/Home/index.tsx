@@ -17,7 +17,7 @@ const HomePage = () => {
           </Heading>
           <p className={s.subtitle}>You can know the type of Pokemon, its strengths, disadvantages and abilities</p>
 
-          <Button>See pokemons</Button>
+          <Button green>See pokemons</Button>
         </div>
         <Parallax />
       </div>
