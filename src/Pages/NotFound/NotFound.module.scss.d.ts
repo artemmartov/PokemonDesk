@@ -2,10 +2,9 @@
 // Please do not change this file!
 interface CssExports {
   error: string;
-  images: string;
-  r: string;
+  imageBlock: string;
   root: string;
-  title: string;
+  wrap: string;
 }
 export const cssExports: CssExports;
 export default cssExports;

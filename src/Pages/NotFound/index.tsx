@@ -1,21 +1,20 @@
 import React from 'react';
 import s from './NotFound.module.scss';
-import { ReactComponent as R } from './assets/R.svg';
-import { ReactComponent as Error } from './assets/404.svg';
+import Button from '../../components/Button';
+import { ReactComponent as CommandR } from './assets/R.svg';
+import { navigate } from 'hookrouter';
 
 const NotFound = () => {
   return (
     <div className={s.root}>
-      <div className={s.images}>
-        <div className={s.error}>
-          <Error />
+      <div className={s.wrap}>
+        <div className={s.imageBlock}>
+          <CommandR />
+          <div>The rocket team has won this time</div>
+          <Button onClick={() => navigate('/')}>RETURN</Button>
         </div>
-        <div className={s.r}>
-          <R />
-        </div>
+        <div className={s.error}>404</div>
       </div>
-
-      <p className={s.title}>The rocket team has won this time.</p>
     </div>
   );
 };

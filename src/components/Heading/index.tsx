@@ -11,7 +11,7 @@ export enum Head {
 
 type HeadingProps = {
   size: Head;
-  className: string;
+  className?: string;
 };
 
 const Heading: React.FC<HeadingProps> = ({ size, children, className }) => {

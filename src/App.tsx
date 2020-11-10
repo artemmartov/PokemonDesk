@@ -1,24 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// import NotFound from './Pages/NotFound';
-import HomePage from './Pages/Home';
-
+import NotFound from '../src/Pages/NotFound';
 import './index.scss';
+import { useRoutes } from 'hookrouter';
+import routes from './routes';
 
-const App = () => (
-  <section className="App">
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <HomePage />
-        </Route>
-
-        <Route path="/pokedex">
-          <footer>pokedex</footer>
-        </Route>
-      </Switch>
-    </Router>
-  </section>
-);
+const App = () => {
+  const match = useRoutes(routes);
+  return match || <NotFound />;
+};
 
 export default App;

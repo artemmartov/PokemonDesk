@@ -1,0 +1,24 @@
+.root {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cardWrapper {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2vw;
+  max-width: 1125px;
+}
+
+.title {
+  margin-top: 73px;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+.bold {
+  font-weight: bold;
+}

@@ -4,7 +4,7 @@ src/**.d.ts
 
 
 dist/
-
+src/**/*.module.s.ts
 **/*.module.d.ts
 **/*.module.scss.d.ts
 *.module.css
