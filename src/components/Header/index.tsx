@@ -7,6 +7,8 @@ import { ReactComponent as PokemonLogoSvg } from './assets/Logo.svg';
 
 const Header: React.FC = () => {
   const path = usePath();
+  console.log('rrrrr');
+
   return (
     <header className={s.root}>
       <section className={s.wrap}>
@@ -25,4 +27,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export default React.memo(Header);
