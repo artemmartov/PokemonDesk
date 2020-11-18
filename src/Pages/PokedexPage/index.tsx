@@ -1,31 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import s from './PokedexPage.module.scss';
 import PokemonCard from './PokemonCard';
 import Heading from '../../components/Heading';
 import { Head } from '../../components/Heading';
+import useData from '../../hook/getData';
 
-const PokedexPage: React.FC = () => {
-  const [totalPokemons, setTotalPokemon] = useState(null);
-  const [pokemons, setPokemons] = useState<any[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
-  useEffect(() => {
-    const getPokemons = async () => {
-      setIsLoading(true);
-      try {
-        const response = await fetch('http://zar.hosthot.ru/api/v1/pokemons');
-        const data = await response.json();
-        setTotalPokemon(data.total);
-        setPokemons(data.pokemons);
-      } catch {
-        setIsError(true);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    getPokemons();
-  }, []);
+const PokedexPage = () => {
+  const [searchValue, setSearchValue] = useState('');
+  const [query, setQuery] = useState({});
 
+  const { data, isLoading, isError } = useData('getPokemon', query, searchValue);
   if (isLoading) {
     return <div>loading...</div>;
   }
@@ -33,22 +17,31 @@ const PokedexPage: React.FC = () => {
   if (isError) {
     return <div>ошибка</div>;
   }
-  return (
-    <>
-      <div className={s.root}>
-        {totalPokemons && (
-          <Heading size={Head.h1} className={s.title}>
-            {totalPokemons} <span className={s.bold}>Pokemons</span> for you to choose our favourite
-          </Heading>
-        )}
 
-        <div className={s.cardWrapper}>
-          {pokemons.map((el) => (
-            <PokemonCard key={el.id} pokemon={el} />
-          ))}
-        </div>
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value);
+    setQuery((s) => ({
+      ...s,
+      name: e.target.value,
+    }));
+  };
+
+  return (
+    <div className={s.root}>
+      {data?.length && (
+        <Heading size={Head.h1} className={s.title}>
+          {data.total} <span className={s.bold}>Pokemons</span> for you to choose our favourite
+        </Heading>
+      )}
+      <div>
+        <input type="text" value={searchValue} onChange={handleSearchChange} />
       </div>
-    </>
+      <div className={s.cardWrapper}>
+        {data?.map((el, index) => (
+          <PokemonCard key={index + el} pokemon={el} />
+        ))}
+      </div>
+    </div>
   );
 };
 
