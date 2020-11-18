@@ -12,7 +12,6 @@ const useData = (endpoint: string, query: Record<string, unknown>, deps: any[] =
       setIsLoading(true);
       try {
         const data = await req(endpoint, query);
-        console.log(333, data);
 
         setData(data.pokemons);
       } catch {
