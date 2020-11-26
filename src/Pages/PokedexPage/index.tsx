@@ -1,18 +1,21 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import s from './PokedexPage.module.scss';
 import PokemonCard from './PokemonCard';
 import Heading from '../../components/Heading';
 import { Head } from '../../components/Heading';
 import useData from '../../hook/getData';
+import { IPokemons, PokemonRequest } from '../../interface/Pokedex';
+import useDebounce from '../../hook/useDebounce';
 
-const PokedexPage = () => {
-  const [searchValue, setSearchValue] = useState('');
-  const [query, setQuery] = useState({});
+interface IQuery {
+  name?: string;
+}
 
-  const { data, isLoading, isError } = useData('getPokemon', query, searchValue);
-  if (isLoading) {
-    return <div>loading...</div>;
-  }
+const PokedexPage: React.FC = () => {
+  const [searchValue, setSearchValue] = useState<string>('');
+  const [query, setQuery] = useState<IQuery>({});
+  const debounceValue = useDebounce(searchValue, 500);
+  const { data, isLoading, isError } = useData<IPokemons>('getPokemon', query, [debounceValue]);
 
   if (isError) {
     return <div>ошибка</div>;
@@ -20,7 +23,7 @@ const PokedexPage = () => {
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
-    setQuery((s) => ({
+    setQuery((s: IQuery) => ({
       ...s,
       name: e.target.value,
     }));
@@ -28,18 +31,21 @@ const PokedexPage = () => {
 
   return (
     <div className={s.root}>
-      {data?.length && (
-        <Heading size={Head.h1} className={s.title}>
-          {data.total} <span className={s.bold}>Pokemons</span> for you to choose our favourite
-        </Heading>
-      )}
-      <div>
+      <Heading size={Head.h1} className={s.title}>
+        {!isLoading && data && (
+          <div>
+            {data.total} <span className={s.bold}>Pokemons</span> for you to choose our favourite{' '}
+          </div>
+        )}
+      </Heading>
+
+      <div className={s.input}>
         <input type="text" value={searchValue} onChange={handleSearchChange} />
       </div>
       <div className={s.cardWrapper}>
-        {data?.map((el, index) => (
-          <PokemonCard key={index + el} pokemon={el} />
-        ))}
+        {!isLoading &&
+          data &&
+          data.pokemons.map((el: PokemonRequest, index: number | string) => <PokemonCard key={index} pokemon={el} />)}
       </div>
     </div>
   );
