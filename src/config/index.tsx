@@ -11,6 +11,12 @@ export const config = {
           pathname: '/api/v1/pokemons',
         },
       },
+      getOnePokemon: {
+        method: 'GET',
+        url: {
+          pathname: '/api/v1/pokemon/{id}',
+        },
+      },
     },
   },
 };
