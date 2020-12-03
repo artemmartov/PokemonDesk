@@ -1,6 +1,9 @@
 export interface IPokemons {
-  total: number;
-  pokemons: PokemonRequest[];
+  count?: number;
+  total?: number;
+  limit?: number;
+  offset?: number;
+  pokemons?: PokemonRequest[];
 }
 
 const pokemonsData = {

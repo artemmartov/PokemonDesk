@@ -1,4 +1,6 @@
 webpack.config.js
+webpack.client.config.js
+webpack.server.config.js
 *.css
 **/*.module.d.ts
 **/*.module.scss.d.ts

@@ -5,7 +5,7 @@ import { Head } from '../../../components/Heading';
 import s from './PokemonCard.module.scss';
 
 export interface IPokemon {
-  key: number;
+  key?: number | string;
   pokemon: {
     name_clean: string;
     abilities: string[];

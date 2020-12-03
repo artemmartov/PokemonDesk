@@ -6,10 +6,9 @@ const useData = <T>(
   query: { [key: string]: number | string },
   deps: any[] = [],
 ): Record<string, unknown> => {
-  const [data, setData] = useState<T | null>(null);
+  const [data, setData] = useState<T | null | void | unknown>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isError, setIsError] = useState<boolean>(false);
-  console.log('deps', deps);
 
   useEffect(() => {
     const getData = async (): Promise<void> => {

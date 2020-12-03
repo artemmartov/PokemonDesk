@@ -8,7 +8,7 @@ import { IPokemons, PokemonRequest } from '../../interface/Pokedex';
 import useDebounce from '../../hook/useDebounce';
 
 interface IQuery {
-  name?: string;
+  [name: string]: string;
 }
 
 const PokedexPage: React.FC = () => {
@@ -16,6 +16,7 @@ const PokedexPage: React.FC = () => {
   const [query, setQuery] = useState<IQuery>({});
   const debounceValue = useDebounce(searchValue, 500);
   const { data, isLoading, isError } = useData<IPokemons>('getPokemon', query, [debounceValue]);
+  console.log('data', data);
 
   if (isError) {
     return <div>ошибка</div>;
@@ -31,22 +32,23 @@ const PokedexPage: React.FC = () => {
 
   return (
     <div className={s.root}>
-      <Heading size={Head.h1} className={s.title}>
-        {!isLoading && data && (
-          <div>
-            {data.total} <span className={s.bold}>Pokemons</span> for you to choose our favourite{' '}
+      {!isLoading && data ? (
+        <>
+          <Heading size={Head.h1} className={s.title}>
+            <div>
+              {(data as any).total} <span className={s.bold}>Pokemons</span> for you to choose our favourite{' '}
+            </div>
+          </Heading>
+          <div className={s.input}>
+            <input type="text" value={searchValue} onChange={handleSearchChange} />
           </div>
-        )}
-      </Heading>
-
-      <div className={s.input}>
-        <input type="text" value={searchValue} onChange={handleSearchChange} />
-      </div>
-      <div className={s.cardWrapper}>
-        {!isLoading &&
-          data &&
-          data.pokemons.map((el: PokemonRequest, index: number | string) => <PokemonCard key={index} pokemon={el} />)}
-      </div>
+          <div className={s.cardWrapper}>
+            {(data as any).pokemons.map((el: PokemonRequest, index: number | string) => (
+              <PokemonCard key={index} pokemon={el} />
+            ))}
+          </div>
+        </>
+      ) : null}
     </div>
   );
 };
